@@ -1,0 +1,40 @@
+Algoritmo Ejercicio11
+	
+	contadorsegunda=0 
+	contadorpares <- 0
+	contadorimpares <- 0
+	acumuladorpares=0
+	contadornulo <- 0
+	Para i<-1 Hasta 10 Hacer
+		numero <- Aleatorio(0,36)
+		Escribir 'Numero aleatorio de la ruleta ',i,': ',numero
+		
+		Si (numero MOD 2=0 Y numero<>0) Entonces
+			contadorpares <- contadorpares+1
+			acumuladorpares = acumuladorpares+numero
+		SiNo
+			Si (numero MOD 2=1 Y numero<>0)Entonces
+				contadorimpares <- contadorimpares+1
+			FinSi
+		FinSi
+		Si (i=1) Entonces
+			contadormayor <- numero
+			contadormenor <- numero
+		SiNo
+			Si (numero>contadormayor) Entonces
+				contadormayor <- numero
+			FinSi
+		FinSi
+		Si (numero >12 Y numero<25) Entonces
+			contadorsegunda=contadorsegunda+1
+		FinSi
+	FinPara
+	
+	promediopares=acumuladorpares/contadorpares
+	
+	Escribir "a) Los numeros impares son en total: ",contadorimpares
+	Escribir "b) El promedio de los numeros pares sin contar el 0 es: ",promediopares
+	Escribir "c) Numeros que se encuentran entre la segunda docena: ",contadorsegunda
+	Escribir "d) El numero mayor es: ",contadormayor
+	
+FinAlgoritmo
